@@ -14,7 +14,7 @@ export const App = () => {
   } else if (pathname === '/login') {
     element.append(LoginPage());
   } else if (pathname === '/register') {
-    element.append(RegisterPage());
+    element.append(RegisterPage({}));
   }
 
   return element;
