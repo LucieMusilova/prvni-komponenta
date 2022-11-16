@@ -2,10 +2,14 @@ import { Header } from "../Header/index.js";
 import { HomePage } from "../HomePage/index.js";
 import { LoginPage } from "../LoginPage/index.js";
 import { RegisterPage } from "../RegisterPage/index.js";
+import { AccountPage } from "../AccountPage/index.js";
 
 export const App = (props) => {
   let { session } = props;
   console.log("session", session);
+
+  const element = document.createElement("div");
+  element.classList.add("app");
 
   if (session === undefined) {
     const authToken = window.localStorage.getItem("authToken");
@@ -36,11 +40,13 @@ export const App = (props) => {
 
   const { pathname } = window.location;
   if (pathname === "/") {
-    element.append(HomePage({}));
+    element.append(HomePage({ session }));
   } else if (pathname === "/login") {
-    element.append(LoginPage({}));
+    element.append(LoginPage({ session }));
   } else if (pathname === "/register") {
-    element.append(RegisterPage({}));
+    element.append(RegisterPage({ session }));
+  } else if (pathname === "/account") {
+    element.append(AccountPage({ session }));
   }
 
   return element;

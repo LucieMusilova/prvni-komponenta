@@ -15,7 +15,7 @@ export const ShoppingList = (props) => {
     fetch(`https://apps.kodim.cz/daweb/shoplist/api/me/week/${day}`, {
       method: "GET",
       headers: {
-        Authorization: "Basic testtest@test.cz:testtest",
+        Authorization: `Bearer ${window.localStorage.getItem("authToken")}`,
       },
     })
       .then((response) => response.json())

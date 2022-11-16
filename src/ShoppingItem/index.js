@@ -24,7 +24,7 @@ export const ShoppingItem = (props) => {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Basic testtest@test.cz:testtest",
+          Authorization: `Bearer ${window.localStorage.getItem("authToken")}`,
         },
         body: JSON.stringify({ done: !done }),
       }
