@@ -24,6 +24,7 @@ export const ShoppingItem = (props) => {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
+          Authorization: "Basic testtest@test.cz:testtest",
         },
         body: JSON.stringify({ done: !done }),
       }

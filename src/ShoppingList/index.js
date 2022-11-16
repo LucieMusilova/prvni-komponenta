@@ -15,7 +15,7 @@ export const ShoppingList = (props) => {
     fetch(`https://apps.kodim.cz/daweb/shoplist/api/me/week/${day}`, {
       method: "GET",
       headers: {
-        Authorization: "Basic luckamusi@luckamusi.cz:luckamusi",
+        Authorization: "Basic testtest@test.cz:testtest",
       },
     })
       .then((response) => response.json())
@@ -38,7 +38,7 @@ export const ShoppingList = (props) => {
       {
         method: "DELETE",
         headers: {
-          Authorization: "Basic luckamusi@luckamusi.cz:luckamusi",
+          Authorization: "Basic testtest@test.cz:testtest",
         },
       }
     )
